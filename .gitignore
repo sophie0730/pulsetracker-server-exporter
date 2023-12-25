@@ -1,1 +1,7 @@
 node_modules
+
+sea-config.json
+sea-prep.blob
+
+server_exporter
+server_exporter.js

@@ -1,10 +1,8 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable prefer-destructuring */
 import express from 'express';
 import cors from 'cors';
 import * as os from 'os';
 import * as client from 'prom-client';
-import * as calculate from '../models/system-calculate.js';
+import * as calculate from './models/system-calculate.js';
 
 const app = express();
 app.use(express.json());
@@ -76,7 +74,6 @@ async function setMetrics() {
   const memoryUsage = calculate.getMemoryUsage();
   guageMemoryUsage.set(memoryUsage);
 
-  // disk info
 
   const diskInfos = await calculate.getDiskInfo();
   for (const info of diskInfos) {

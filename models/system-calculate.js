@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-newline */
 import * as os from 'os';
 import { exec } from 'child_process';
 
@@ -7,7 +6,6 @@ export function getCPUInfo() {
   let idleTotal = 0;
   let total = 0;
 
-  // eslint-disable-next-line no-restricted-syntax
   for (const cpu of cpus) {
     const { user, nice, sys, idle, irq } = cpu.times;
     idleTotal += idle;
@@ -51,7 +49,7 @@ export async function getDiskInfo() {
       }
       const data = JSON.parse(stdout);
       const parseData = parseDiskData(data);
-      // eslint-disable-next-line no-restricted-syntax, guard-for-in
+
       for (const item of parseData) {
         const info = {
           diskDevice: item.disk_device,
