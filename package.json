@@ -1,0 +1,21 @@
+{
+  "name": "pulsetracker-exporter",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "exporter-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "exporter-server-build": "npx esbuild ./exporter-server.js --allow-overwrite --bundle --platform=node --outfile=./server_exporter.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "prom-client": "^15.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.10"
+  }
+}
